@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex h-screen">
+    <aside class="p-4 w-64 bg-gray-100">
+      <h1 id="projects" class="text-2xl font-bold mb-4">Projects</h1>
+      <ul id="project-list" class="mb-4">
+        <!-- Project list will be populated here -->
+      </ul>
+      <button id="add-project" class="bg-blue-500 text-white px-4 py-2 rounded">
+        Add Project
+      </button>
+    </aside>
+
+    <main class="flex-1 p-8">
+      <h2 id="todo-list" class="text-3xl font-bold mb-4">Todo List</h2>
+      <div id="todo-list-items">
+
+      </div>
+    </main>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

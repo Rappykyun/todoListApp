@@ -1,16 +1,36 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',       // Entry point of your application
+  mode: "development",
+  entry: "./src/index.js",
   output: {
-    filename: 'main.js',         // Output file name
-    path: path.resolve(__dirname, 'dist'), // Output directory
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
   },
-  mode: 'development',   
+  devServer: {
+    port: 8000,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000,
+              name: "[name].[ext]",
+              outputPath: "images/",
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/template.html', 
+      template: "./src/template.html",
     }),
-  ],      
+  ],
 };
