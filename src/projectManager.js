@@ -19,8 +19,11 @@ const projectManager = (() => {
             todoData.title,
             todoData.description,
             todoData.dueDate,
-            todoData.priority
+            todoData.priority,
+            todoData.notes,
+            todoData.checklist
           );
+          todo.completed = todoData.completed;
           project.addTodo(todo);
         });
         projects.push(project);
@@ -31,7 +34,6 @@ const projectManager = (() => {
   return {
     addProject(project) {
       projects.push(project);
-      
       saveToLocalStorage();
     },
 
@@ -54,9 +56,10 @@ const projectManager = (() => {
     loadProjects() {
       loadFromLocalStorage();
     },
+
     saveToLocalStorage() {
       saveToLocalStorage();
-    }
+    },
   };
 })();
 

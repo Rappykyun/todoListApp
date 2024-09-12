@@ -17,14 +17,14 @@ function showModal() {
   modal.innerHTML = `
     <div class="modal-content bg-white rounded-lg shadow-xl p-6 w-96 max-w-md mx-auto">
       <div class="modal-header mb-4">
-        <h2 class="text-2xl font-bold">Add Project</h2>
+        <h2 class="text-2xl font-bold text-pink-700">Add Project</h2>
       </div>
       <div class="modal-body mb-6">
-        <input type="text" id="project-name" placeholder="Project name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="text" id="project-name" placeholder="Project name" class="w-full px-3 py-2 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
       </div>
       <div class="modal-footer flex justify-end space-x-2">
         <button id="cancel-button" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">Cancel</button>
-        <button id="add-button" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Add</button>
+        <button id="add-button" class="px-4 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400">Add</button>
       </div>
     </div>
   `;
@@ -66,19 +66,16 @@ function showModal() {
     }
   });
 
-  // Close modal when clicking outside
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       closeModal();
     }
   });
 
-  // Prevent closing when clicking inside the modal
   modalContent.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
-  // Close modal on Escape key press
   document.addEventListener(
     "keydown",
     (e) => {

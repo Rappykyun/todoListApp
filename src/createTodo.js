@@ -1,4 +1,3 @@
-export default createTodo;
 function createTodo(title, description, dueDate, priority, notes, checklist) {
   return {
     title,
@@ -7,5 +6,8 @@ function createTodo(title, description, dueDate, priority, notes, checklist) {
     priority,
     notes,
     checklist,
+    completed: false,
   };
 }
+
+export default createTodo;

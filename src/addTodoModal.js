@@ -16,18 +16,18 @@ function showAddTodoModal(projectName) {
   modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
   modal.innerHTML = `
     <div class="modal-content bg-white rounded-lg shadow-xl p-6 w-96 max-w-md mx-auto">
-      <h2 class="text-2xl font-bold mb-4">Add Todo</h2>
-      <input type="text" id="todo-title" placeholder="Title" class="w-full mb-2 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <input type="text" id="todo-description" placeholder="Description" class="w-full mb-2 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <input type="date" id="todo-due-date" class="w-full mb-2 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <select id="todo-priority" class="w-full mb-4 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <h2 class="text-2xl font-bold mb-4 text-pink-700">Add Todo</h2>
+      <input type="text" id="todo-title" placeholder="Title" class="w-full mb-2 p-2 border border-pink-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
+      <textarea id="todo-description" placeholder="Description" class="w-full mb-2 p-2 border border-pink-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500" rows="3"></textarea>
+      <input type="date" id="todo-due-date" class="w-full mb-2 p-2 border border-pink-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
+      <select id="todo-priority" class="w-full mb-4 p-2 border border-pink-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
       <div class="flex justify-end space-x-2">
         <button id="cancel-todo" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">Cancel</button>
-        <button id="add-todo" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Add</button>
+        <button id="add-todo" class="px-4 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400">Add</button>
       </div>
     </div>
   `;
@@ -76,13 +76,11 @@ function showAddTodoModal(projectName) {
     }
   });
 
-
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       closeModal();
     }
   });
-
 
   modalContent.addEventListener("click", (e) => {
     e.stopPropagation();
